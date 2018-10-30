@@ -32,6 +32,10 @@ class Main extends CI_Controller {
 			                break;
 			        }
 
+			        //Product Image
+			        $Scrape_img = $save->find('img.product-media__img', -1);
+			        $Img = $Scrape_img->src;
+
 			        //Product Name
 			        $Scrape_product_name = $save->find('a.product__name', -1);
 			        $Product_name = $Scrape_product_name->title;
@@ -39,10 +43,6 @@ class Main extends CI_Controller {
 			        //Product Price
 			        $Scrape_price = $save->find('span.amount', -1);
 			        $Price = $Scrape_price->innertext;
-
-			        //Product Image
-			        $Scrape_img = $save->find('img.product-media__img', -1);
-			        $Img = $Scrape_img->src;
 
 			        //Product Link Detail
 			        $Scrape_link_detail = $save->find('a.product-media__link', -1);
